@@ -16,7 +16,6 @@ export const Index = () => {
       try {
         const response = await axios.get(`http://localhost:8080/api/products/?page=${currentPage}`);
         setMaxPages(response.data.response.totalPages);
-        console.log(response.data.response)
         setProducts(response.data.response.docs);
         setIsLoading(true)
       } catch (error) {
